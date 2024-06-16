@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{B412EF3A-52ED-408E-A966-81757732A29B}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DelegatePro.iOS</RootNamespace>
+    <AssemblyName>DelegatePro.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: Adenine Solutions inc. (EV4DR3K4G7)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>Ryan's Delegate Pro Distro Profile 2</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="KeyChain.Net">
+      <HintPath>..\packages\KeyChain.Net.0.0.4\lib\Xamarin.iOS10\KeyChain.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyChain.Net.XamarinIOS">
+      <HintPath>..\packages\KeyChain.Net.0.0.4\lib\Xamarin.iOS10\KeyChain.Net.XamarinIOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\packages\SQLite.Net.Core-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
+      <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\Components\btprogresshud-1.20\lib\ios-unified\BTProgressHUD.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\DelegateIcon29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\DelegateIcon58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\DelegateIcon87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\DelegateIcon80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\DelegateIcon120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\DelegateIcon180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="ViewControllers\ContainerViewControllers\" />
+    <Folder Include="Cells\" />
+    <Folder Include="ViewControllers\SelectionViewControllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ViewControllers\LoginViewController.cs" />
+    <Compile Include="ViewControllers\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\LandingPageViewController.cs" />
+    <Compile Include="ViewControllers\LandingPageViewController.designer.cs">
+      <DependentUpon>LandingPageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\BaseViewController.cs" />
+    <Compile Include="iOSHelpers.cs" />
+    <Compile Include="ViewControllers\CaseViewController.cs" />
+    <Compile Include="ViewControllers\CaseViewController.designer.cs">
+      <DependentUpon>CaseViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UISlideNotification.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseDateViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseDateViewController.designer.cs">
+      <DependentUpon>CaseDateViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseEmployeesViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseEmployeesViewController.designer.cs">
+      <DependentUpon>CaseEmployeesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseIssueViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseIssueViewController.designer.cs">
+      <DependentUpon>CaseIssueViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseGrievanceStatusViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseGrievanceStatusViewController.designer.cs">
+      <DependentUpon>CaseGrievanceStatusViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseManagersViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseManagersViewController.designer.cs">
+      <DependentUpon>CaseManagersViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseNotesViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseNotesViewController.designer.cs">
+      <DependentUpon>CaseNotesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseUnionViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseUnionViewController.designer.cs">
+      <DependentUpon>CaseUnionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Segues.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseStatusViewController.cs" />
+    <Compile Include="ViewControllers\ContainerViewControllers\CaseStatusViewController.designer.cs">
+      <DependentUpon>CaseStatusViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ContainerViewControllers\BaseContainerViewController.cs" />
+    <Compile Include="SearchControllerHelper.cs" />
+    <Compile Include="ViewControllers\ResetPasswordViewController.cs" />
+    <Compile Include="ViewControllers\ResetPasswordViewController.designer.cs">
+      <DependentUpon>ResetPasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PersonManagementViewController.cs" />
+    <Compile Include="ViewControllers\PersonManagementViewController.designer.cs">
+      <DependentUpon>PersonManagementViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PersonDetailViewController.cs" />
+    <Compile Include="ViewControllers\PersonDetailViewController.designer.cs">
+      <DependentUpon>PersonDetailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\PersonListViewController.cs" />
+    <Compile Include="ViewControllers\PersonListViewController.designer.cs">
+      <DependentUpon>PersonListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OrganizationViewController.cs" />
+    <Compile Include="ViewControllers\OrganizationViewController.designer.cs">
+      <DependentUpon>OrganizationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CasePersonnelViewController.cs" />
+    <Compile Include="ViewControllers\CasePersonnelViewController.designer.cs">
+      <DependentUpon>CasePersonnelViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\NewPersonViewController.cs" />
+    <Compile Include="ViewControllers\NewPersonViewController.designer.cs">
+      <DependentUpon>NewPersonViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemPickerModel.cs" />
+    <Compile Include="ViewControllers\NotesListViewController.cs" />
+    <Compile Include="ViewControllers\NotesListViewController.designer.cs">
+      <DependentUpon>NotesListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\NoteDetailsViewController.cs" />
+    <Compile Include="ViewControllers\NoteDetailsViewController.designer.cs">
+      <DependentUpon>NoteDetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\EntryTextCell.cs" />
+    <Compile Include="Cells\EntryTextCell.designer.cs">
+      <DependentUpon>EntryTextCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SelectionCell.cs" />
+    <Compile Include="Cells\SelectionCell.designer.cs">
+      <DependentUpon>SelectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\SwitchCell.cs" />
+    <Compile Include="Cells\SwitchCell.designer.cs">
+      <DependentUpon>SwitchCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\MultiLineEntryCell.cs" />
+    <Compile Include="Cells\MultiLineEntryCell.designer.cs">
+      <DependentUpon>MultiLineEntryCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\BaseTableViewCell.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\CaseSelectionViewController.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\CaseSelectionViewController.designer.cs">
+      <DependentUpon>CaseSelectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SelectionViewControllers\GrievanceStatusViewController.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\GrievanceStatusViewController.designer.cs">
+      <DependentUpon>GrievanceStatusViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SelectionViewControllers\ParentNoteSelectionViewController.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\ParentNoteSelectionViewController.designer.cs">
+      <DependentUpon>ParentNoteSelectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SelectionViewControllers\VisibilitySelectionViewController.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\VisibilitySelectionViewController.designer.cs">
+      <DependentUpon>VisibilitySelectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SelectionViewControllers\POITypeViewController.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\POITypeViewController.designer.cs">
+      <DependentUpon>POITypeViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SelectionViewControllers\CaseFilterViewController.cs" />
+    <Compile Include="ViewControllers\SelectionViewControllers\CaseFilterViewController.designer.cs">
+      <DependentUpon>CaseFilterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cells\NotesTableViewCell.cs" />
+    <Compile Include="Cells\NotesTableViewCell.designer.cs">
+      <DependentUpon>NotesTableViewCell.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DelegatePro.PCL\DelegatePro.PCL.csproj">
+      <Project>{115096EB-D9E8-4652-89F8-65E86DD09FEF}</Project>
+      <Name>DelegatePro.PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="btprogresshud">
+      <Version>1.20</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FontAwesome.ttf" />
+    <BundleResource Include="Resources\cancel150.png" />
+    <BundleResource Include="Resources\paper%401x.png" />
+    <BundleResource Include="Resources\paper%402x.png" />
+    <BundleResource Include="Resources\paper%403x.png" />
+    <BundleResource Include="Resources\people%401x.png" />
+    <BundleResource Include="Resources\people%402x.png" />
+    <BundleResource Include="Resources\people%403x.png" />
+    <BundleResource Include="Resources\notes%401x.png" />
+    <BundleResource Include="Resources\notes%402x.png" />
+    <BundleResource Include="Resources\notes%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="iTunesArtwork" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
